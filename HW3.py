@@ -48,41 +48,34 @@ class CouponDispenser:
 
     def distribute_session(self):
         round_number = 1
+        while True:
 
-        user_input = input(
+            user_input = input(
 
-            f"Round {round_number} - Enter name (or a comma separated list), or type 'show' or 'exit': "
+                f"Round {round_number} - Enter name (or a comma separated list), or type 'show' or 'exit': "
         )
 
-        if user_input == 'exit':
-            print("Goodbye!")
-            break
-        elif user_input == 'show':
-            for i in range(len(self.customer_roster)):
-                name = self.customer_roster[i]
-                coupon = self.coupon_cards[self.issued_indices[i]]
-                print(f"{name}: {coupon}")
-        else: 
-            pieces = user_input.split(",")
-            for piece in pieces:
-                name = piece.strip()
+            if user_input == 'exit':
+                print("Goodbye!")
+                break
+            elif user_input == 'show':
+                for i in range(len(self.customer_roster)):
+                    name = self.customer_roster[i]
+                    coupon = self.coupon_cards[self.issued_indices[i]]
+                    print(f"{name}: {coupon}")
+            else: 
+                pieces = user_input.split(",")
+                for piece in pieces:
+                    name = piece.strip()
+                    if name != "":
+                        result = self.issue_coupon(name)
+                        print(result)
+            round += 1
         pass
 
-    def tally_distribution(self):
-        """
-        Extra credit:
-        Print coupon distribution counts (NO sorting) using ONLY lists.
+    #def tally_distribution(self):
+       # if self.coupon_cards == "":
 
-          - If issued_indices is empty:
-              * print("Empty")
-              * return
-          - Otherwise:
-              * For each coupon in coupon_cards (in original order), print:
-                    "<coupon> distribution count: <count>."
-
-        Returns:
-            None
-        """
         # TODO: Implement per instructions
         pass
 
@@ -96,9 +89,9 @@ def main():
     ]
 
     # Uncomment the lines below as you implement each function.
-    # box = CouponDispenser(coupon_cards)
-    # box.distribute_session()
-    # box.tally_distribution()
+    box = CouponDispenser(coupon_cards)
+    box.distribute_session()
+    box.tally_distribution()
     pass
 
 
