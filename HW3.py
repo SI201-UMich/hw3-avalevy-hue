@@ -18,19 +18,16 @@ class CouponDispenser:
    
 
     def __init__(self, coupon_cards):
+        self.coupon_cards = coupon_cards
+        self.customer_roster = []
+        self.issued_indices = []
         
-        # TODO: Implement per instructions
         pass
 
     def __str__(self):
-        """
-        Return a single string with all coupons in coupon_cards joined by pipes ('|').
-        If coupon_cards is empty, return an empty string "".
-
-        Returns:
-            str
-        """
-        # TODO: Implement per instructions
+        if len(self.coupon_cards) == 0:
+            return ""
+        return "|".join(self.coupon_cards)
         pass
 
     def issue_coupon(self, name):
