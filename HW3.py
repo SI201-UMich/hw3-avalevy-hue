@@ -1,12 +1,13 @@
 # Name: Ava Levy
-# Student ID:
-# Email:
-# Who or what you worked with on this homework (including generative AI like ChatGPT):
+# Student ID: 54317988
+# Email: avalevy@umich.edu
+# Who or what you worked with on this homework (including generative AI like ChatGPT): ChatGPT
 # If you worked with generative AI also add a statement for how you used it.
-# e.g.:
+# e.g.: for assisting in helping setup GitHub and fix errors in program 
 # Asked ChatGPT hints for debugging and suggesting the general structure of the code
 # Did your use of GenAI on this assignment align with your goals and guidelines in 
-#    your Gen AI contract? If not, why?
+#    your Gen AI contract? If not, why? yes because I want to strive to solve problems on my own but want to also 
+# try to use AI to help break down concepts or difficult ideas 
 
 import random
 import io
@@ -14,24 +15,10 @@ from contextlib import redirect_stdout
 
 
 class CouponDispenser:
-    """
-    CouponDispenser manages a box of coupon cards and assigns one coupon
-    to each unique name entered by the user during a session.
-
-    Required attributes (initialized in __init__):
-      - coupon_cards: list[str]              # all possible coupon texts
-      - customer_roster: list[str]             # names in order of assignment
-      - issued_indices: list[int]           # indices into coupon_cards aligned to customer_roster
-
-    """
+   
 
     def __init__(self, coupon_cards):
-        """
-        Initialize a new CouponDispenser object.
-
-        Args:
-            coupon_cards (list[str]): list of possible coupons users can receive.
-        """
+        
         # TODO: Implement per instructions
         pass
 
