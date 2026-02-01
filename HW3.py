@@ -31,20 +31,19 @@ class CouponDispenser:
         pass
 
     def issue_coupon(self, name):
-        """
-        Assign name with a random coupon. If name is already assigned a coupon, return it.
-        If the list coupon_cards is empty, return:
-        "The box is empty."
-
-        Important: Do not use dictionaries in this method.
-
-        Args:
-            name (str): customer name (trimmed, non-empty)
-
-        Returns:
-            str: message as described above
-        """
-        # TODO: Implement per instructions
+        if len(self.coupon_cards) == 0:
+            return "The box is empty."
+        if name in self.customer_roster:
+            index = self.custoer_roster.index(name)
+            coupon_index = self.issued_indices[index]
+            coupon = self.coupon_cards[coupon_index]
+            return f"That name already has a coupon: {coupon}"
+        
+        coupon_index = random.randint(0, len(self.coupon_cards)-1)
+        self.customer_roster.append(name)
+        self.issued_indices.append(coupon_index)
+        return self.coupon_cards[coupon_index]
+        
         pass
 
     def distribute_session(self):
@@ -85,13 +84,6 @@ class CouponDispenser:
 
 
 def main():
-    """
-    Driver function:
-      - Define the coupon_cards list (example coupons below)
-      - Create a CouponDispenser
-      - Start the interaction via distribute_session()
-      - After exit, call tally_distribution() to print the distribution in the terminal
-    """
     coupon_cards = [
         "10% off",
         "Free small coffee",
